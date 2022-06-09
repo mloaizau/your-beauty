@@ -1,10 +1,14 @@
 .image-size{
   width: 90%;
-  height: 250px;
+  height: 130px;
 }
 .centrado{
   text-align: center;
+
 }
 .justificado{
   text-align: justify;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }

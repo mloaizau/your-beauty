@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { SessionService } from "../../../services/session.service";
+import { IonSlides } from '@ionic/angular';
+import { StoreService } from 'src/app/services/store.service';
 @Component({
   selector: 'app-resumen',
   templateUrl: 'resumen.component.html',
@@ -7,15 +9,25 @@ import { SessionService } from "../../../services/session.service";
 })
 export class ResumenPage implements OnInit {
 
+  @ViewChild(IonSlides) slides: IonSlides;
   public session: any;
 
+  slideOptsOne = {
+    initialSlide: 0,
+    slidesPerView: 1,
+    autoplay:true
+   };
+
   constructor(
-    private _session: SessionService
+    private _session: SessionService,
+    private _storeService: StoreService
   ) {
   }
 
   ngOnInit(){
     this.obtenerSession();
+    this._storeService.getStore();
+    this._storeService.getMarca("maybelline");
   }
 
   async obtenerSession(){

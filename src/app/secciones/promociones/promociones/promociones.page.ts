@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Directive, Input } from '@angular/core';
 import { StoreService } from '../../../services/store.service';
 
 @Component({
@@ -9,6 +9,7 @@ import { StoreService } from '../../../services/store.service';
 export class PromocionesPage {
 
   public productos: any;
+  public producto = [];
 
   constructor(
     private _storeService: StoreService
@@ -16,6 +17,10 @@ export class PromocionesPage {
 
   async getStore(){
     this.productos = await this._storeService.getStore();
+    // for (let i = 0; i < this.productos.length; i++){
+    //   this.producto.push(this.productos[i]);
+    // };
+    console.log(this.productos);
   }
 
   async ionViewWillEnter(){
@@ -23,5 +28,6 @@ export class PromocionesPage {
       this.getStore();
     }
   }
+
 
 }

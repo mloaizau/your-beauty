@@ -1,5 +1,5 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<ion-header  [translucent]="true">
+  <ion-toolbar class="new-background-color">
     <ion-item lines="none" *ngIf="session">
       <ion-icon class="avatar" name="person-circle-outline"></ion-icon>
       <ion-label>¡Hola {{session.nombre}}, buen día!</ion-label>
@@ -12,25 +12,38 @@
     <h3 style="margin-right: 50px; margin-left: 10px;">Tú número</h3>
     <h3>{{session.telefono}}</h3>
   </ion-item>
-  <ion-card class="texto-centrado">
-    <h3 >Has consumido</h3>
-    <img class="imagen" src="assets/minutos.PNG" />
-  </ion-card>
-  <ion-card class="texto-centrado">
-    <h3>Has consumido</h3>
-    <img class="imagen" src="assets/giga.PNG" />
-  </ion-card>
-  <ion-card >
-    <h3 class="texto-centrado">Bolsas Activas</h3>
-    <ion-tem>
-      <ion-icon slot="start" class="icono" name="bag-outline"></ion-icon>
-      <ion-label>Bolsa de 4 GB</ion-label>
-    </ion-tem>
-    <ion-item>
-      <ion-label>4 GB o 30 días, lo que ocurra primero.</ion-label>
+  <ion-slides class="slide-container" [options]="slideOptsOne" pager="true" pager #IonSlides>
+    <ion-slide>
+      <img src="https://cdn.shopify.com/s/files/1/0353/2659/1109/files/Escritorio_39_1800x.png?v=1654701910" alt="">
+    </ion-slide>
+    <ion-slide>
+      <img src="https://cdn.shopify.com/s/files/1/0353/2659/1109/files/Escritorio_40_1800x.png?v=1654704339" alt="">
+    </ion-slide>
+    <ion-slide>
+      <img src="https://cdn.shopify.com/s/files/1/0353/2659/1109/files/Escritorio_41_1800x.png?v=1654709641" alt="">
+    </ion-slide>
+  </ion-slides>
+  <h3 class="texto-centrado">Marcas destacadas</h3>
+  <ion-row>
+    <ion-item class="marcas-destacadas" lines="none">
+      <img src="https://www.thestylesymphony.com/wp-content/uploads/2015/05/maybelline-logo.jpg" alt="">
     </ion-item>
-    <ion-item>
-      <ion-label>$3.990</ion-label>
+    <ion-item class="marcas-destacadas" lines="none">
+      <img src="data:image/jpeg;base64,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" alt="">
     </ion-item>
-  </ion-card>
-</ion-content>
+    <ion-item class="marcas-destacadas" lines="none">
+      <img src="https://themagicb.files.wordpress.com/2016/01/zzdq8zyw.png" alt="">
+    </ion-item>
+  </ion-row>
+  <ion-row>
+    <ion-item class="marcas-destacadas" lines="none">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-2mudq5l2oWck4gzIE9ORiA1m95c68-Q4UigZk3PpLG2e_hDNSgr0-rZIZwU5sby_dm4&usqp=CAU" alt="">
+    </ion-item>
+    <ion-item class="marcas-destacadas" lines="none">
+      <img src="https://www.dior.com/couture/var/dior/storage/images/horizon/logo-dior/25334685-1-fre-FR/logo-dior_mobile_share.jpg" alt="">
+    </ion-item>
+    <ion-item class="marcas-destacadas" lines="none">
+      <img src="https://i.pinimg.com/originals/ef/a4/6c/efa46ca42b45a8a4c3c2bfb3cbf41d77.png" alt="">
+    </ion-item>
+  </ion-row>
+  </ion-content>
