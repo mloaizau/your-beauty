@@ -1,8 +1,8 @@
 <ion-header [translucent]="true">
   <ion-toolbar class="new-background-color">
-    <ion-item lines="none" *ngIf="session">
-      <ion-icon class="avatar" name="person-circle-outline"></ion-icon>
-      <ion-label>¡Hola {{session.nombre}}, buen día!</ion-label>
+    <ion-item lines="none">
+      <ion-icon (click)="goCategories()" class="icono" name="menu"></ion-icon>
+      <ion-label>¡Hola, buen día!</ion-label>
     </ion-item>
   </ion-toolbar>
 </ion-header>
