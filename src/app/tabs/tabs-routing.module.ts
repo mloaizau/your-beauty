@@ -20,6 +20,10 @@ const routes: Routes = [
         loadChildren: () => import('../secciones/ayuda/ayuda.module').then(m => m.AyudaModule)
       },
       {
+        path: 'categoria',
+        loadChildren: () => import('../secciones/categorias/categorias.module').then(m => m.CategoriasModule)
+      },
+      {
         path: '',
         redirectTo: 'tabs/resumen',
         pathMatch: 'full'

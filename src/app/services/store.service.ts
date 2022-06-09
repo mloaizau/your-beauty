@@ -30,4 +30,13 @@ export class StoreService {
     });
   }
 
+  getCategorias(){
+    return new Promise((resolve, reject) => {
+      const url = 'https://cosmetic-store-dev.herokuapp.com/categorias';
+      this.httpClient.get(url).subscribe(data => {
+        console.log(data);
+        resolve(data)
+      });
+    });
+  }
 }

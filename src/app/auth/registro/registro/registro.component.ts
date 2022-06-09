@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/interface/usuario';
 import { FirestoreService } from 'src/app/services/firestore.service';
 import { Router } from '@angular/router';
-import { RandommerService } from 'src/app/services/randommer.service';
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
@@ -17,7 +16,6 @@ export class RegistroComponent implements OnInit {
   constructor(
     private firestoreService: FirestoreService,
     private router: Router,
-    private randommer: RandommerService,
   ) {
     this.registroUsuario = {} as Usuario;
   }
