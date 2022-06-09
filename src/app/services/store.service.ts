@@ -49,4 +49,14 @@ export class StoreService {
       });
     });
   }
+
+  getID(id: string){
+    return new Promise((resolve, reject) => {
+      const url = 'https://cosmetic-store-dev.herokuapp.com/productos?id='+id;
+      this.httpClient.get(url).subscribe(data => {
+        console.log(data);
+        resolve(data)
+      });
+    });
+  }
 }

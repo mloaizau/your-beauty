@@ -1,4 +1,4 @@
-<ion-header  [translucent]="true">
+<ion-header [translucent]="true">
   <ion-toolbar class="new-background-color">
     <ion-item lines="none" *ngIf="session">
       <ion-icon class="avatar" name="person-circle-outline"></ion-icon>
@@ -26,24 +26,43 @@
   <h3 class="texto-centrado">Marcas destacadas</h3>
   <ion-row>
     <ion-item (click)="filtroMarca('MAYBELLINE')" class="marcas-destacadas" lines="none">
-      <img style="border: 1px solid #000;" src="https://i.pinimg.com/originals/81/4d/03/814d03951a365f8bc6a522b94b9a5a24.jpg" alt="">
+      <img style="border: 1px solid #000;"
+        src="https://i.pinimg.com/originals/81/4d/03/814d03951a365f8bc6a522b94b9a5a24.jpg" alt="">
     </ion-item>
     <ion-item (click)="filtroMarca('ESSIE')" class="marcas-destacadas" lines="none">
       <img src="https://logodix.com/logo/1801594.png" alt="">
     </ion-item>
     <ion-item (click)="filtroMarca('GARNIER')" class="marcas-destacadas" lines="none">
-      <img style="border: 1px solid #000;" src="https://i.pinimg.com/280x280_RS/23/7c/bb/237cbbdf4d35ed4e6024ece142fff346.jpg" alt="">
+      <img style="border: 1px solid #000;"
+        src="https://i.pinimg.com/280x280_RS/23/7c/bb/237cbbdf4d35ed4e6024ece142fff346.jpg" alt="">
     </ion-item>
   </ion-row>
-  <ion-row>
+  <ion-row style="margin-top: 20px;">
     <ion-item (click)="filtroMarca('LORÉAL PARIS')" class="marcas-destacadas" lines="none">
       <img src="https://www.makeup.cl/new/wp-content/uploads/2019/08/logo-loreal.png" alt="">
     </ion-item>
     <ion-item (click)="filtroMarca('ANASTASIA BEVERLY HILLS')" class="marcas-destacadas" lines="none">
-      <img style="border: 1px solid #000;"  src="https://www.logolynx.com/images/logolynx/d0/d0cc8616863f28267a02f30657f6cbb2.jpeg" alt="">
+      <img style="border: 1px solid #000;"
+        src="https://www.logolynx.com/images/logolynx/d0/d0cc8616863f28267a02f30657f6cbb2.jpeg" alt="">
     </ion-item>
     <ion-item (click)="filtroMarca('NARS')" class="marcas-destacadas" lines="none">
       <img src="https://blog.beautystat.com/wp-content/uploads/2014/09/Christopher-Kane-for-NARS-logo.jpg" alt="">
     </ion-item>
   </ion-row>
-  </ion-content>
+  <h3 class="texto-centrado">Producto más vendido</h3>
+  <ion-row *ngIf="producto">
+    <ion-card class="centrado">
+      <img class="image-size" [src]="producto[0].imagen" onError="this.src='https://concepto.de/wp-content/uploads/2015/05/Default-1-e1547044737976.jpg'" />
+      <ion-card-header>
+        <ion-card-subtitle>{{producto[0].marca}}</ion-card-subtitle>
+        <ion-card-title>{{producto[0].nombre}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content class="justificado">
+        <p>
+          <ion-label>Precio: {{producto[0].signo_precio}}{{producto[0].precio}}</ion-label>
+          <ion-button expand="block" fill="outline">Agregar</ion-button>
+        </p>
+      </ion-card-content>
+    </ion-card>
+  </ion-row>
+</ion-content>

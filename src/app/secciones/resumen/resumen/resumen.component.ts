@@ -12,6 +12,7 @@ export class ResumenPage implements OnInit {
 
   @ViewChild(IonSlides) slides: IonSlides;
   public session: any;
+  public producto: any;
 
   slideOptsOne = {
     initialSlide: 0,
@@ -38,6 +39,8 @@ export class ResumenPage implements OnInit {
     if(!this.session){
       this.obtenerSession();
     }
+    this.producto = await this._storeService.getID("7");
+    console.log(this.producto[0].nombre);
   }
   filtroMarca(marca){
       this.router.navigate(['/home/tabs/ofertas'], { queryParams: {marca: marca} });
