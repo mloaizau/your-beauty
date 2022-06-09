@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
   login(){
     let correo = this.usuario.controls.correo.value;
     let psw = this.usuario.controls.password.value;
-    this.firestoreService.consultar("elemixiUser").subscribe(async (resultadoConsultaTareas) => {
+    this.firestoreService.consultar("YBUser").subscribe(async (resultadoConsultaTareas) => {
       this.arrayColeccionUsuario = [];
       resultadoConsultaTareas.forEach((datosUsers: any) => {
         this.arrayColeccionUsuario.push({
