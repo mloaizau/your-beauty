@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { StoreService } from 'src/app/services/store.service';
 
 @Component({
@@ -11,7 +12,8 @@ export class CategoriasComponent implements OnInit {
   public categorias: any;
 
   constructor(
-    private storeService: StoreService
+    private storeService: StoreService,
+    private router: Router
   ) {
   }
 
@@ -21,5 +23,10 @@ export class CategoriasComponent implements OnInit {
 
   async getCategorias(){
     this.categorias = await this.storeService.getCategorias();
+  }
+
+  irCategoria(nombre){
+    console.log(nombre);
+    this.router.navigate(['/home/tabs/ofertas'], { queryParams: {categoria: nombre} });
   }
 }

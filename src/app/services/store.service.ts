@@ -39,4 +39,14 @@ export class StoreService {
       });
     });
   }
+
+  getCategoria(category: string){
+    return new Promise((resolve, reject) => {
+      const url = 'https://cosmetic-store-dev.herokuapp.com/productos?categoria='+category;
+      this.httpClient.get(url).subscribe(data => {
+        console.log(data);
+        resolve(data)
+      });
+    });
+  }
 }

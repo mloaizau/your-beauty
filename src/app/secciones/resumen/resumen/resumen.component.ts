@@ -39,7 +39,7 @@ export class ResumenPage implements OnInit {
       this.obtenerSession();
     }
   }
-  onClick(){
-      this.router.navigate(['/home/tabs/ofertas'], { queryParams: {marca: "MAYBELLINE"} });
+  filtroMarca(marca){
+      this.router.navigate(['/home/tabs/ofertas'], { queryParams: {marca: marca} });
   }
 }

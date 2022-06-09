@@ -7,7 +7,7 @@
 </ion-header>
 <ion-content>
   <ion-list *ngIf="categorias">
-    <ion-item *ngFor="let item of categorias">
+    <ion-item *ngFor="let item of categorias" (click)="irCategoria(item.nombre)">
       <img src="{{item.icono}}" alt="">
       <ion-label>{{item.nombre}}</ion-label>
     </ion-item>

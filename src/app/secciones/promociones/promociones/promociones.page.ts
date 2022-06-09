@@ -18,6 +18,7 @@ export class PromocionesPage {
     private route: ActivatedRoute
   ) {
     this.route.queryParams.subscribe(respuesta => {
+      console.log(respuesta);
       this.params = respuesta;
     });
   }
@@ -25,7 +26,10 @@ export class PromocionesPage {
   async getStore(){
     if(this.params.marca){
       this.productos = await this._storeService.getMarca(this.params.marca);
-    }else{
+    }else if(this.params.categoria){
+      this.productos = await this._storeService.getCategoria(this.params.categoria);
+    }
+    else{
       this.productos = await this._storeService.getStore();
     }
   }
