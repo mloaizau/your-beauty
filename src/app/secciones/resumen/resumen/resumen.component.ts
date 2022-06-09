@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { SessionService } from "../../../services/session.service";
 import { IonSlides } from '@ionic/angular';
 import { StoreService } from 'src/app/services/store.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-resumen',
   templateUrl: 'resumen.component.html',
@@ -20,14 +21,13 @@ export class ResumenPage implements OnInit {
 
   constructor(
     private _session: SessionService,
-    private _storeService: StoreService
+    private _storeService: StoreService,
+    private router: Router
   ) {
   }
 
   ngOnInit(){
     this.obtenerSession();
-    this._storeService.getStore();
-    this._storeService.getMarca("maybelline");
   }
 
   async obtenerSession(){
@@ -38,5 +38,8 @@ export class ResumenPage implements OnInit {
     if(!this.session){
       this.obtenerSession();
     }
+  }
+  onClick(){
+      this.router.navigate(['/home/tabs/ofertas'], { queryParams: {marca: "MAYBELLINE"} });
   }
 }
