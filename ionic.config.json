@@ -1,0 +1,11 @@
+{
+  "name": "elemixi",
+  "integrations": {
+    "capacitor": {
+      "enabled": false
+    },
+    "cordova": {}
+  },
+  "type": "angular",
+  "id": "c7dbb55c"
+}
