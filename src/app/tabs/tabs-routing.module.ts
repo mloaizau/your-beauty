@@ -24,6 +24,10 @@ const routes: Routes = [
         loadChildren: () => import('../secciones/categorias/categorias.module').then(m => m.CategoriasModule)
       },
       {
+        path: 'perfil',
+        loadChildren: () => import('../secciones/perfil/perfil.module').then(m => m.PerfilModule)
+      },
+      {
         path: '',
         redirectTo: 'tabs/resumen',
         pathMatch: 'full'
