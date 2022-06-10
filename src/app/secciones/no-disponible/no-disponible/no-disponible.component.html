@@ -1,0 +1,74 @@
+<ion-header [translucent]="true" *ngIf="params.ruta == 'retiro'">
+  <ion-toolbar>
+    <ion-title>
+      Retiro en tienda
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-header [translucent]="true" *ngIf="params.ruta == 'cupon'">
+  <ion-toolbar>
+    <ion-title>
+      Cupones
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-header [translucent]="true" *ngIf="params.ruta == 'info'">
+  <ion-toolbar>
+    <ion-title>
+      Información
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="contenedor" [fullscreen]="true" *ngIf="params.ruta == 'retiro'">
+  <ion-row class="ion-justify-content-center">
+    <ion-icon class="centrado icono" name="map-outline"></ion-icon>
+  </ion-row>
+  <ion-row>
+    <ion-label class="bajada">No estás cerca de ninguna de nuestras tiendas para poder pedir un número.</ion-label>
+  </ion-row>
+  <ion-row style="margin-top: 10px;">
+    <ion-label class="centrado"><a routerLink='/home/tabs/ayuda'>Volver a tiendas</a></ion-label>
+  </ion-row>
+</ion-content>
+<ion-content class="contenedor" [fullscreen]="true" *ngIf="params.ruta == 'cupon'">
+  <ion-row class="ion-justify-content-center">
+    <ion-icon class="centrado icono" name="ticket-outline"></ion-icon>
+  </ion-row>
+  <ion-row>
+    <ion-label class="bajada">En este momento no tienes cupones disponibles.</ion-label>
+  </ion-row>
+  <ion-row style="margin-top: 10px;">
+    <ion-label class="centrado"><a routerLink='/home/tabs/ayuda'>Volver a tiendas</a></ion-label>
+  </ion-row>
+</ion-content>
+<ion-content class="contenedor-info" *ngIf="params.ruta == 'info'">
+  <div class="bubbles">
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+  </div>
+  <ion-row class="ion-justify-content-center">
+    <ion-img  src="assets/banner1.png"></ion-img>
+  </ion-row>
+  <ion-row>
+    <ion-label class="bajada">Somos una Empresa Importadora y Distribuidora de Perfumes, Cosméticos y Accesorios de Peluquería Profesional, ubicada en Santiago de Chile. </ion-label>
+  </ion-row>
+  <ion-row>
+    <ion-label class="bajada">Todos nuestros productos provienen de Distribuidores Autorizados dentro y fuera de Chile, lo que asegura su originalidad. </ion-label>
+  </ion-row>
+  <ion-row>
+    <ion-label class="bajada">Conoce nuestros productos, especialmente escogidos para tu cuidado y bienestar personal.
+      Para nosotros tu decisión pasa por la experiencia, esa que queremos entregar en Your Beauty.</ion-label>
+  </ion-row>
+  <ion-row>
+    <ion-label class="bajada">Email: info@yourbeauty.cl</ion-label>
+    <ion-label class="bajada">Teléfono: +56 9 5195 6500</ion-label>
+  </ion-row>
+  <ion-row style="margin-top: 20px;">
+    <ion-label class="centrado"><a routerLink='/home/tabs/ayuda'>Volver a tiendas</a></ion-label>
+  </ion-row>
+</ion-content>

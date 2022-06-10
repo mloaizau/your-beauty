@@ -36,5 +36,9 @@ export class AppComponent {
     this.closeMenu();
   }
 
+  info(){
+    this.route.navigate(["/home/tabs/retiro"], { queryParams: {ruta: "info"} });
+    this.closeMenu();
+  }
 
 }

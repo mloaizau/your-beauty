@@ -28,6 +28,10 @@ const routes: Routes = [
         loadChildren: () => import('../secciones/perfil/perfil.module').then(m => m.PerfilModule)
       },
       {
+        path: 'retiro',
+        loadChildren: () => import('../secciones/no-disponible/no-disponible.module').then(m => m.NoDisponibleModule)
+      },
+      {
         path: '',
         redirectTo: 'tabs/resumen',
         pathMatch: 'full'

@@ -8,15 +8,15 @@
 
 <ion-content [fullscreen]="true">
   <ion-list >
-    <ion-item >
+    <ion-item (click)="goTo('retiro')" >
       <ion-icon name="bag-handle-outline"></ion-icon>
       <ion-label>Retiro en tienda</ion-label>
     </ion-item>
-    <ion-item >
+    <ion-item (click)="goTo('cupon')">
       <ion-icon name="ticket-outline"></ion-icon>
       <ion-label>Mis cupones</ion-label>
     </ion-item>
-    <ion-item >
+    <ion-item (click)="goTo('info')">
       <ion-icon name="compass-outline"></ion-icon>
       <ion-label>Información de tienda</ion-label>
     </ion-item>
