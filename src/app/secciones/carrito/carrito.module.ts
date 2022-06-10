@@ -2,16 +2,16 @@ import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { NoDisponibleComponent } from './no-disponible/no-disponible.component';
-import { NoDisponibleRoutingModule } from './no-disponible-routing.module';
+import { CarritoComponent } from './carrito-routing/carrito.component';
+import { CarritoRoutingModule } from './carrito-routing.module';
 
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
-    NoDisponibleRoutingModule
+    CarritoRoutingModule
   ],
-  declarations: [NoDisponibleComponent]
+  declarations: [CarritoComponent]
 })
-export class NoDisponibleModule { }
+export class CarritoModule { }

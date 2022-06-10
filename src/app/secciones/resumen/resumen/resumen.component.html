@@ -3,7 +3,7 @@
     <ion-item lines="none">
       <ion-icon slot="start" (click)="goCategories()" class="icono" name="menu"></ion-icon>
       <ion-img style="width: 100px; margin-left: 40px;" src="assets/resize1.png"></ion-img>
-      <ion-icon slot="end" name="cart"></ion-icon>
+      <ion-icon slot="end" [routerLink]="['/home/tabs/carrito']" routerLinkActive="router-link-active"  name="cart"></ion-icon>
     </ion-item>
   </ion-toolbar>
 </ion-header>
@@ -17,8 +17,7 @@
     <div class="bubble"></div>
   </div>
   <ion-item lines="none" *ngIf="session">
-    <h3 style="margin-right: 50px; margin-left: 10px;">Tú número</h3>
-    <h3>{{session.telefono}}</h3>
+    <ion-label style="color: grey;">entrega en {{session.direccion}}</ion-label>
   </ion-item>
   <ion-slides class="slide-container" [options]="slideOptsOne" pager="true" pager #IonSlides>
     <ion-slide>
