@@ -42,6 +42,17 @@
     <ion-label class="centrado"><a routerLink='/home/tabs/ayuda'>Volver a tiendas</a></ion-label>
   </ion-row>
 </ion-content>
+<ion-content class="contenedor" [fullscreen]="true" *ngIf="params.ruta == 'ordenes'">
+  <ion-row class="ion-justify-content-center">
+    <ion-icon class="centrado icono" name="sad-outline"></ion-icon>
+  </ion-row>
+  <ion-row>
+    <ion-label class="bajada">No registras ordenes de compra.</ion-label>
+  </ion-row>
+  <ion-row style="margin-top: 10px;">
+    <ion-label class="centrado"><a routerLink='/home/tabs/ofertas'>Ir a la tienda</a></ion-label>
+  </ion-row>
+</ion-content>
 <ion-content class="contenedor-info" *ngIf="params.ruta == 'info'">
   <div class="bubbles">
     <div class="bubble"></div>

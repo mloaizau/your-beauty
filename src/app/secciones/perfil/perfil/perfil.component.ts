@@ -37,4 +37,8 @@ export class PerfilComponent implements OnInit {
     }
     console.log(this.session)
   }
+
+  goTo(ruta){
+    this.route.navigate(["/home/tabs/retiro"], { queryParams: {ruta: ruta} });
+  }
 }
