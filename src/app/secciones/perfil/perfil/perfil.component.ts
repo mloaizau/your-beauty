@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ChildActivationStart, Router } from '@angular/router';
+import { MenuController } from '@ionic/angular';
+import { SessionService } from '../../../services/session.service';
 
 @Component({
   selector: 'app-perfil',
@@ -7,8 +10,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilComponent implements OnInit {
 
-  constructor() { }
+  public session: any;
 
-  ngOnInit() {}
+  constructor(
+    public menuCtrl: MenuController,
+    private _session: SessionService,
+    private route: Router
+  ) { }
 
+  ngOnInit() {
+    this.obtenerSesion();
+  }
+
+  async obtenerSesion(){
+    this.session = await this._session.get('sessionActive');
+
+  }
+
+  cerrarSesion(){
+    this._session.remove("sessionActive");
+  }
+
+  ionViewWillEnter() {
+    if (!this.session) {
+      this.obtenerSesion();
+    }
+    console.log(this.session)
+  }
 }

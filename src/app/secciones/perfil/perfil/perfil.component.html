@@ -1,3 +1,54 @@
-<p>
-  perfil works!
-</p>
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Perfil
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="contenedor" [fullscreen]="true" *ngIf="!session">
+  <ion-row class="ion-justify-content-center">
+    <ion-icon class="centrado icono" name="sad-outline"></ion-icon>
+  </ion-row>
+  <ion-row>
+    <h3 class="centrado">No has iniciado sesión</h3>
+  </ion-row>
+  <ion-row>
+    <ion-label class="centrado  bajada"><a routerLink='/login'>Ingresa</a> para poder ver tus datos</ion-label>
+  </ion-row>
+  <ion-row style="margin-top: 10px;">
+    <ion-label class="centrado bajada">Si no tienes una cuenta, <a routerLink='/registro'>regístrate</a></ion-label>
+  </ion-row>
+</ion-content>
+<ion-content [fullscreen]="true" *ngIf="session">
+  <ion-list >
+    <ion-item >
+      <ion-label>Nombre:</ion-label>
+      <ion-label class="quiebre">{{session.nombres}}</ion-label>
+    </ion-item>
+    <ion-item >
+      <ion-label>Apellido:</ion-label>
+      <ion-label class="quiebre">{{session.apellidos}}</ion-label>
+    </ion-item>
+    <ion-item >
+      <ion-label>Contacto:</ion-label>
+      <ion-label class="quiebre">{{session.correo}}</ion-label>
+    </ion-item>
+    <ion-item >
+      <ion-label>Dirección de entrega:</ion-label>
+      <ion-label class="quiebre">{{session.direccion}}</ion-label>
+    </ion-item>
+    <ion-item >
+      <ion-label>Dirección de facturación:</ion-label>
+      <ion-label class="quiebre">{{session.direccion}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Mis compras</ion-label>
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+    </ion-item>
+    <ion-item routerLink="/login" (click)="cerrarSesion()">
+      <ion-label>Cerrar sesión</ion-label>
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+    </ion-item>
+  </ion-list>
+</ion-content>

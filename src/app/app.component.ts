@@ -36,8 +36,5 @@ export class AppComponent {
     this.closeMenu();
   }
 
-  cerrarSesion(){
-    this._session.remove("sessionActive");
-    this.closeMenu();
-  }
+
 }
