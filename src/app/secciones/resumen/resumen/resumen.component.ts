@@ -3,6 +3,7 @@ import { SessionService } from '../../../services/session.service';
 import { IonSlides, NavController } from '@ionic/angular';
 import { StoreService } from 'src/app/services/store.service';
 import { Router } from '@angular/router';
+import { CarritoProvider } from '../../../providers/carrito.provider';
 @Component({
   selector: 'app-resumen',
   templateUrl: 'resumen.component.html',
@@ -23,6 +24,7 @@ export class ResumenPage implements OnInit {
     private _session: SessionService,
     private _storeService: StoreService,
     private router: Router,
+    private cart: CarritoProvider
   ) {}
 
   ngOnInit() {
@@ -46,5 +48,9 @@ export class ResumenPage implements OnInit {
   }
   goCategories() {
     this.router.navigate(['/home/tabs/categoria']);
+  }
+
+  addToCar(item){
+    this.cart.addItem(item);
   }
 }

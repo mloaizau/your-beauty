@@ -1,5 +1,6 @@
 import { Component, Directive, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { CarritoProvider } from 'src/app/providers/carrito.provider';
 import { StoreService } from '../../../services/store.service';
 
 @Component({
@@ -15,7 +16,8 @@ export class PromocionesPage {
 
   constructor(
     private _storeService: StoreService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private cart: CarritoProvider
   ) {
     this.route.queryParams.subscribe(respuesta => {
       console.log(respuesta);
@@ -36,6 +38,10 @@ export class PromocionesPage {
 
   async ionViewWillEnter(){
       this.getStore();
+  }
+
+  addToCar(producto){
+    this.cart.addItem(producto);
   }
 
 }

@@ -16,3 +16,25 @@
     <ion-label class="centrado"><a routerLink='/home/tabs/ofertas'>Ir a la tienda</a></ion-label>
   </ion-row>
 </ion-content>
+<ion-content *ngIf="carrito.length > 0">
+  <ion-grid>
+  <ion-row>
+    <ion-col size="12" *ngFor="let producto of carrito; let i = index">
+      <ion-card class="centrado">
+        <img class="image-size" [src]="producto.imagen" />
+        <ion-card-header>
+          <ion-card-subtitle>{{producto.marca}}</ion-card-subtitle>
+          <ion-card-title>{{producto.nombre}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content class="justificado">
+          <p>
+            <ion-label>Precio: {{producto.signo_precio}}{{producto.precio}}</ion-label>
+            <ion-button (click)="addToCar(producto)" expand="block" fill="outline">Agregar</ion-button>
+          </p>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>
+

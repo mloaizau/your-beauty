@@ -19,7 +19,7 @@
         <ion-card-content class="justificado">
           <p>
             <ion-label>Precio: {{producto.signo_precio}}{{producto.precio}}</ion-label>
-            <ion-button expand="block" fill="outline">Agregar</ion-button>
+            <ion-button (click)="addToCar(producto)" expand="block" fill="outline">Agregar</ion-button>
           </p>
         </ion-card-content>
       </ion-card>

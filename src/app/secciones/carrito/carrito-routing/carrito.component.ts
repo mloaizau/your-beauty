@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CarritoProvider } from '../../../providers/carrito.provider';
 
 @Component({
   selector: 'app-carrito',
@@ -7,8 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarritoComponent implements OnInit {
 
-  constructor() { }
+  carrito = [];
+  hayitems: any;
+  constructor(
+    private cart: CarritoProvider
+  ) { }
 
   ngOnInit() {}
+
+  ionViewWillEnter() {
+    this.carrito = this.cart.getCart();
+    console.log(this.carrito);
+  }
 
 }
