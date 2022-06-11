@@ -13,6 +13,7 @@ export class PromocionesPage {
   public productos: any;
   public producto = [];
   public params: any;
+  public count: any;
 
   constructor(
     private _storeService: StoreService,
@@ -23,6 +24,7 @@ export class PromocionesPage {
       console.log(respuesta);
       this.params = respuesta;
     });
+    this.count = this.cart.getCart().length;
   }
 
   async getStore(){
@@ -37,11 +39,13 @@ export class PromocionesPage {
   }
 
   async ionViewWillEnter(){
+      this.count = this.cart.getCantidad();
       this.getStore();
   }
 
   addToCar(producto){
     this.cart.addItem(producto);
+    this.count = this.cart.getCantidad();
   }
 
 }

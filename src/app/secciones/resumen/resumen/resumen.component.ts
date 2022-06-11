@@ -13,6 +13,7 @@ export class ResumenPage implements OnInit {
   @ViewChild(IonSlides) slides: IonSlides;
   public session: any;
   public producto: any;
+  public count: any;
 
   slideOptsOne = {
     initialSlide: 0,
@@ -25,7 +26,10 @@ export class ResumenPage implements OnInit {
     private _storeService: StoreService,
     private router: Router,
     private cart: CarritoProvider
-  ) {}
+  ) {
+    this.count = this.cart.getCart().length;
+    console.log(this.count);
+  }
 
   ngOnInit() {
     this.obtenerSession();
@@ -40,6 +44,7 @@ export class ResumenPage implements OnInit {
       this.obtenerSession();
     }
     this.producto = await this._storeService.getID('7');
+    this.count = this.cart.getCantidad();
   }
   filtroMarca(marca) {
     this.router.navigate(['/home/tabs/ofertas'], {
@@ -52,5 +57,6 @@ export class ResumenPage implements OnInit {
 
   addToCar(item){
     this.cart.addItem(item);
+    this.count = this.cart.getCantidad();
   }
 }

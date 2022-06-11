@@ -4,6 +4,7 @@
       <ion-icon slot="start" (click)="goCategories()" class="icono" name="menu"></ion-icon>
       <ion-img style="width: 100px; margin-left: 40px;" src="assets/resize1.png"></ion-img>
       <ion-icon slot="end" [routerLink]="['/home/tabs/carrito']" routerLinkActive="router-link-active"  name="cart"></ion-icon>
+      <ion-badge *ngIf="count > 0" slot="end" [routerLink]="['/home/tabs/carrito']" color="danger">{{count}}</ion-badge>
     </ion-item>
   </ion-toolbar>
 </ion-header>

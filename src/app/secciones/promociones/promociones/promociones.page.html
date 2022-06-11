@@ -1,8 +1,10 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Catálogo
-    </ion-title>
+    <ion-item lines="none">
+      <ion-label>Catálogo</ion-label>
+      <ion-icon slot="end" [routerLink]="['/home/tabs/carrito']" routerLinkActive="router-link-active"  name="cart"></ion-icon>
+      <ion-badge *ngIf="count > 0" slot="end" [routerLink]="['/home/tabs/carrito']" color="danger">{{count}}</ion-badge>
+    </ion-item>
   </ion-toolbar>
 </ion-header>
 
