@@ -1,5 +1,5 @@
 import { Component, Directive, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CarritoProvider } from 'src/app/providers/carrito.provider';
 import { StoreService } from '../../../services/store.service';
 
@@ -18,10 +18,10 @@ export class PromocionesPage {
   constructor(
     private _storeService: StoreService,
     private route: ActivatedRoute,
-    private cart: CarritoProvider
+    private cart: CarritoProvider,
+    private router: Router
   ) {
     this.route.queryParams.subscribe(respuesta => {
-      console.log(respuesta);
       this.params = respuesta;
     });
     this.count = this.cart.getCart().length;
@@ -48,4 +48,7 @@ export class PromocionesPage {
     this.count = this.cart.getCantidad();
   }
 
+  goDetails(id){
+    this.router.navigate(["/home/tabs/detalle"], { queryParams: {id: id} });
+  }
 }

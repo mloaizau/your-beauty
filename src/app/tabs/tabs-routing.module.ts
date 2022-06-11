@@ -36,6 +36,10 @@ const routes: Routes = [
         loadChildren: () => import('../secciones/carrito/carrito.module').then(m => m.CarritoModule)
       },
       {
+        path: 'detalle',
+        loadChildren: () => import('../secciones/detalle/detalle.module').then(m => m.DetalleModule)
+      },
+      {
         path: '',
         redirectTo: 'tabs/resumen',
         pathMatch: 'full'

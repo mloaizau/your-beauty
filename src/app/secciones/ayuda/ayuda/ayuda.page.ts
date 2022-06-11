@@ -13,7 +13,6 @@ export class AyudaPage {
   ) {}
 
   goTo(ruta){
-    console.log(ruta);
     this.router.navigate(["/home/tabs/retiro"], { queryParams: {ruta: ruta} });
   }
 

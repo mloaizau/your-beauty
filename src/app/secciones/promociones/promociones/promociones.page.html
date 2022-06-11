@@ -13,8 +13,8 @@
   <ion-row>
     <ion-col size="6" *ngFor="let producto of productos">
       <ion-card class="centrado">
-        <img class="image-size" [src]="producto.imagen" onError="this.src='https://concepto.de/wp-content/uploads/2015/05/Default-1-e1547044737976.jpg'" />
-        <ion-card-header>
+        <img (click)="goDetails(producto.id)" class="image-size" [src]="producto.imagen" onError="this.src='https://concepto.de/wp-content/uploads/2015/05/Default-1-e1547044737976.jpg'" />
+        <ion-card-header (click)="goDetails(producto.id)">
           <ion-card-subtitle>{{producto.marca}}</ion-card-subtitle>
           <ion-card-title>{{producto.nombre}}</ion-card-title>
         </ion-card-header>
