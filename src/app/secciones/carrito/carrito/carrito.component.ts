@@ -75,7 +75,7 @@ export class CarritoComponent implements OnInit {
     }
   }
 
-  async updateCompra(id, compra){
+  updateCompra(id, compra){
     this.firestoreService.actualizar(id, compra);
     this.cart.removeAll();
     this._session.set('sessionActive', compra);
