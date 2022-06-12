@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { IonicStorageModule } from '@ionic/storage-angular';
 import { HttpClientModule } from '@angular/common/http';
-
+import { CallNumber } from '@awesome-cordova-plugins/call-number/ngx';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -26,7 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     IonicStorageModule.forRoot(),
     HttpClientModule
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, CallNumber],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Tu carrito
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="contenedor" [fullscreen]="true" *ngIf="carritoCompra.length === 0">
+  <ion-row class="ion-justify-content-center">
+    <ion-icon class="centrado icono" name="cart-outline"></ion-icon>
+  </ion-row>
+  <ion-row>
+    <ion-label class="bajada">En este momento no tienes productos agregados.</ion-label>
+  </ion-row>
+  <ion-row style="margin-top: 10px;">
+    <ion-label class="centrado"><a routerLink='/home/tabs/ofertas'>Ir a la tienda</a></ion-label>
+  </ion-row>
+</ion-content>
+<ion-content [fullscreen]="true" *ngIf="carritoCompra.length > 0">
+  <ion-grid>
+  <ion-row>
+    <ion-col size="12" *ngFor="let producto of carritoCompra; let i = index">
+      <ion-card>
+        <ion-row>
+          <ion-col size="5">
+            <img class="image-size" [src]="producto.imagen" />
+          </ion-col>
+          <ion-col size="7">
+            <ion-label>{{producto.marca}}</ion-label>
+            <br>
+            <ion-label>{{producto.nombre}}</ion-label>
+            <br>
+            <ion-label>{{producto.signo_precio}}{{producto.totalItem}}</ion-label>
+            <br>
+            <ion-label>Cantidad: {{producto.cantidad}}</ion-label>
+            <ion-button expand="block" fill="outline" (click)="quitarItem(producto)">Quitar</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+  <ion-button (click)="comprar()" expand="block" fill="outline">Comprar {{total}}</ion-button>
+</ion-grid>
+</ion-content>
+

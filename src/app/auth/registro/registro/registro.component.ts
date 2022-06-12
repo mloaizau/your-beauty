@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/interface/usuario';
 import { FirestoreService } from 'src/app/services/firestore.service';
 import { Router } from '@angular/router';
-import { RandommerService } from 'src/app/services/randommer.service';
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
@@ -17,7 +16,6 @@ export class RegistroComponent implements OnInit {
   constructor(
     private firestoreService: FirestoreService,
     private router: Router,
-    private randommer: RandommerService,
   ) {
     this.registroUsuario = {} as Usuario;
   }
@@ -26,10 +24,7 @@ export class RegistroComponent implements OnInit {
   }
 
   async registro(){
-    const numero = "+56 80 839 6137";
-    //const numero = await this.randommer.getRandomPhone(); //Problemas de CORS
-    this.registroUsuario.telefono = numero;
-    this.firestoreService.insertar("elemixiUser", this.registroUsuario).then(() => {
+    this.firestoreService.insertar("YBUser", this.registroUsuario).then(() => {
       this.registroUsuario = {} as Usuario;
       this.router.navigate(["/registro/mensaje-confirmacion"]);
     }, (error) => {
@@ -47,7 +42,9 @@ export class RegistroComponent implements OnInit {
   }
 
   validadorGlobal(){
-    if(this.registroUsuario.nombre !== "" && this.registroUsuario.passwd !== "" && !this.isErrorEmail){
+    if(this.registroUsuario.nombres !== "" && this.registroUsuario.apellidos !== ""
+    && this.registroUsuario.direccion !== ""
+    && this.registroUsuario.passwd !== "" && !this.isErrorEmail){
       this.isValid = true;
     } else{
       this.isValid = false;

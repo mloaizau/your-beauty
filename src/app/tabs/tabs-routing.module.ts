@@ -20,6 +20,30 @@ const routes: Routes = [
         loadChildren: () => import('../secciones/ayuda/ayuda.module').then(m => m.AyudaModule)
       },
       {
+        path: 'categoria',
+        loadChildren: () => import('../secciones/categorias/categorias.module').then(m => m.CategoriasModule)
+      },
+      {
+        path: 'perfil',
+        loadChildren: () => import('../secciones/perfil/perfil.module').then(m => m.PerfilModule)
+      },
+      {
+        path: 'retiro',
+        loadChildren: () => import('../secciones/no-disponible/no-disponible.module').then(m => m.NoDisponibleModule)
+      },
+      {
+        path: 'carrito',
+        loadChildren: () => import('../secciones/carrito/carrito.module').then(m => m.CarritoModule)
+      },
+      {
+        path: 'detalle',
+        loadChildren: () => import('../secciones/detalle/detalle.module').then(m => m.DetalleModule)
+      },
+      {
+        path: 'historial',
+        loadChildren: () => import('../secciones/mis-compras/mis-compras.module').then(m => m.MisComprasModule)
+      },
+      {
         path: '',
         redirectTo: 'tabs/resumen',
         pathMatch: 'full'

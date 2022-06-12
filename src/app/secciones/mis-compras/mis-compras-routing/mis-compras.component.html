@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-item lines="none">
+      <ion-label>Mis compras</ion-label>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-card *ngFor="let item of compras; let i = index ">
+      <ion-row>
+        <ion-label>N° Transacción: {{compras[i].ordenID}}</ion-label>
+        <ion-label>Cantidad de productos: {{compras[i].cantidad}}</ion-label>
+        <ion-label>Total de compra: {{compras[i].total}}</ion-label>
+      </ion-row>
+    </ion-card>
+  </ion-grid>
+</ion-content>

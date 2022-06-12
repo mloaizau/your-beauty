@@ -19,7 +19,7 @@ export class SessionService {
   }
 
   public set(key: string, value: any) {
-    this._storage?.set(key, value);
+    this._storage.set(key, value);
   }
 
   public get(key: string) {
@@ -31,6 +31,6 @@ export class SessionService {
   }
 
   public remove(key: string) {
-    this._storage?.remove(key);
+    this._storage.remove(key);
   }
 }

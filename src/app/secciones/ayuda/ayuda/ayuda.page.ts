@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ayuda',
@@ -7,6 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AyudaPage {
 
-  constructor() {}
+  constructor(
+    private router: Router
+  ) {}
+
+  goTo(ruta){
+    this.router.navigate(["/home/tabs/retiro"], { queryParams: {ruta: ruta} });
+  }
 
 }

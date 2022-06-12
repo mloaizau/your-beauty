@@ -6,7 +6,29 @@
   height: auto;
 }
 .icono{
-  width: 20px;
-  height: 20px;
-  margin-left: 10px;
+  width: 30px;
+  height: 30px;
+  margin-left: 5px;
 }
+.slide-container{
+  width: 90%;
+  height: 200px;
+}
+img{
+  border-radius: 10px;
+}
+.marcas-destacadas{
+  width: 120px;
+  height: auto;
+}
+.new-background-color{
+  --background: #FFE4F3;
+}
+ion-badge{
+  position: absolute;
+  right: 10px;
+  padding: 3px 6px;
+  border-radius: 10px;
+  top: 25px;
+}
+

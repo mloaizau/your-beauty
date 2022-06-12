@@ -18,4 +18,9 @@ export class FirestoreService {
   public consultar(coleccion) {
     return this.angularFirestore.collection(coleccion).snapshotChanges();
   }
+
+  public actualizar(id,coleccion) {
+    this.angularFirestore.collection("YBUser").doc(id).set(coleccion);
+    return;
+  }
 }

@@ -36,8 +36,9 @@ export class AppComponent {
     this.closeMenu();
   }
 
-  cerrarSesion(){
-    this._session.remove("sessionActive");
+  info(){
+    this.route.navigate(["/home/tabs/retiro"], { queryParams: {ruta: "info"} });
     this.closeMenu();
   }
+
 }

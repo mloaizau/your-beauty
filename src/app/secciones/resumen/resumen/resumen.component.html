@@ -1,36 +1,76 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-item lines="none" *ngIf="session">
-      <ion-icon class="avatar" name="person-circle-outline"></ion-icon>
-      <ion-label>¡Hola {{session.nombre}}, buen día!</ion-label>
+    <ion-item lines="none">
+      <ion-icon slot="start" (click)="goCategories()" class="icono" name="menu"></ion-icon>
+      <ion-img style="width: 100px; margin-left: 40px;" src="assets/resize1.png"></ion-img>
+      <ion-icon slot="end" [routerLink]="['/home/tabs/carrito']" routerLinkActive="router-link-active"  name="cart"></ion-icon>
+      <ion-badge *ngIf="count > 0" slot="end" [routerLink]="['/home/tabs/carrito']" color="danger">{{count}}</ion-badge>
     </ion-item>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
+  <div class="bubbles">
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+  </div>
   <ion-item lines="none" *ngIf="session">
-    <h3 style="margin-right: 50px; margin-left: 10px;">Tú número</h3>
-    <h3>{{session.telefono}}</h3>
+    <ion-label style="color: grey;">entrega en {{session.direccion}}</ion-label>
   </ion-item>
-  <ion-card class="texto-centrado">
-    <h3 >Has consumido</h3>
-    <img class="imagen" src="assets/minutos.PNG" />
-  </ion-card>
-  <ion-card class="texto-centrado">
-    <h3>Has consumido</h3>
-    <img class="imagen" src="assets/giga.PNG" />
-  </ion-card>
-  <ion-card >
-    <h3 class="texto-centrado">Bolsas Activas</h3>
-    <ion-tem>
-      <ion-icon slot="start" class="icono" name="bag-outline"></ion-icon>
-      <ion-label>Bolsa de 4 GB</ion-label>
-    </ion-tem>
-    <ion-item>
-      <ion-label>4 GB o 30 días, lo que ocurra primero.</ion-label>
+  <ion-slides class="slide-container" [options]="slideOptsOne" pager="true" pager #IonSlides>
+    <ion-slide>
+      <img src="assets/slide1.png" alt="">
+    </ion-slide>
+    <ion-slide>
+      <img src="assets/slide2.png" alt="">
+    </ion-slide>
+    <ion-slide>
+      <img src="assets/slide3.png" alt="">
+    </ion-slide>
+  </ion-slides>
+  <h3 class="texto-centrado">Marcas destacadas</h3>
+  <ion-row>
+    <ion-item (click)="filtroMarca('MAYBELLINE')" class="marcas-destacadas" lines="none">
+      <img style="border: 1px solid #000;"
+        src="https://i.pinimg.com/originals/81/4d/03/814d03951a365f8bc6a522b94b9a5a24.jpg" alt="">
     </ion-item>
-    <ion-item>
-      <ion-label>$3.990</ion-label>
+    <ion-item (click)="filtroMarca('ESSIE')" class="marcas-destacadas" lines="none">
+      <img src="https://logodix.com/logo/1801594.png" alt="">
     </ion-item>
-  </ion-card>
+    <ion-item (click)="filtroMarca('GARNIER')" class="marcas-destacadas" lines="none">
+      <img style="border: 1px solid #000;"
+        src="https://i.pinimg.com/280x280_RS/23/7c/bb/237cbbdf4d35ed4e6024ece142fff346.jpg" alt="">
+    </ion-item>
+  </ion-row>
+  <ion-row style="margin-top: 20px;">
+    <ion-item (click)="filtroMarca('LORÉAL PARIS')" class="marcas-destacadas" lines="none">
+      <img src="https://www.makeup.cl/new/wp-content/uploads/2019/08/logo-loreal.png" alt="">
+    </ion-item>
+    <ion-item (click)="filtroMarca('ANASTASIA BEVERLY HILLS')" class="marcas-destacadas" lines="none">
+      <img style="border: 1px solid #000;"
+        src="https://www.logolynx.com/images/logolynx/d0/d0cc8616863f28267a02f30657f6cbb2.jpeg" alt="">
+    </ion-item>
+    <ion-item (click)="filtroMarca('NARS')" class="marcas-destacadas" lines="none">
+      <img src="https://blog.beautystat.com/wp-content/uploads/2014/09/Christopher-Kane-for-NARS-logo.jpg" alt="">
+    </ion-item>
+  </ion-row>
+  <h3 style="margin-top: 50px;" class="texto-centrado">Producto más vendido</h3>
+  <ion-row *ngIf="producto">
+    <ion-card class="centrado">
+      <img (click)="goDetails(producto[0].id)" class="image-size" [src]="producto[0].imagen" onError="this.src='https://concepto.de/wp-content/uploads/2015/05/Default-1-e1547044737976.jpg'" />
+      <ion-card-header (click)="goDetails(producto[0].id)">
+        <ion-card-subtitle>{{producto[0].marca}}</ion-card-subtitle>
+        <ion-card-title>{{producto[0].nombre}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content class="justificado">
+        <p>
+          <ion-label>Precio: {{producto[0].signo_precio}}{{producto[0].precio}}</ion-label>
+          <ion-button (click)="addToCar(producto[0])" expand="block" fill="outline">Agregar</ion-button>
+        </p>
+      </ion-card-content>
+    </ion-card>
+  </ion-row>
 </ion-content>
