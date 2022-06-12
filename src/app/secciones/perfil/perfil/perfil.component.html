@@ -42,7 +42,7 @@
       <ion-label>Dirección de facturación:</ion-label>
       <ion-label class="quiebre">{{session.direccion}}</ion-label>
     </ion-item>
-    <ion-item (click)="goTo('ordenes')" >
+    <ion-item [routerLink]="['/home/tabs/historial']"  >
       <ion-label>Mis compras</ion-label>
       <ion-icon name="chevron-forward-outline"></ion-icon>
     </ion-item>

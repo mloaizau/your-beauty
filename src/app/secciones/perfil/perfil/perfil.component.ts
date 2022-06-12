@@ -29,6 +29,7 @@ export class PerfilComponent implements OnInit {
 
   cerrarSesion(){
     this._session.remove("sessionActive");
+    this.obtenerSesion();
   }
 
   ionViewWillEnter() {

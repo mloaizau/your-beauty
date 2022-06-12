@@ -43,8 +43,6 @@ export class CarritoProvider {
       const index = this.carrito.findIndex( x => x.id === itemEliminar );
       this.carrito.splice( index, 1 );
     }
-
-    console.log(this.carrito);
   }
 
   getCart(){
@@ -62,6 +60,10 @@ export class CarritoProvider {
       }
       return cantidad;
     }
+  }
+
+  removeAll(){
+    this.carrito = [];
   }
 
 }

@@ -40,6 +40,10 @@ const routes: Routes = [
         loadChildren: () => import('../secciones/detalle/detalle.module').then(m => m.DetalleModule)
       },
       {
+        path: 'historial',
+        loadChildren: () => import('../secciones/mis-compras/mis-compras.module').then(m => m.MisComprasModule)
+      },
+      {
         path: '',
         redirectTo: 'tabs/resumen',
         pathMatch: 'full'

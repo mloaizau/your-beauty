@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SessionService } from '../../../services/session.service';
 
 @Component({
   selector: 'app-mis-compras',
@@ -7,8 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MisComprasComponent implements OnInit {
 
-  constructor() { }
+  session: any;
+  compras: any;
+
+  constructor(
+    private _session: SessionService
+  ) { }
 
   ngOnInit() {}
 
+  async ionViewWillEnter() {
+    this.session = await this._session.get('sessionActive');
+    this.compras = this.session.historial;
+  }
 }

@@ -19,18 +19,21 @@ export class SessionService {
   }
 
   public set(key: string, value: any) {
-    this._storage?.set(key, value);
+    this._storage.set(key, value);
   }
 
   public get(key: string) {
     return new Promise((resolve, reject) => {
       this.storage.get(key).then(data => {
+        console.log("data in session ", data);
         resolve(data);
       });
     });
   }
 
   public remove(key: string) {
-    this._storage?.remove(key);
+    console.log("removeindo ", key);
+    this._storage.remove(key);
+    console.log(this.get('sessionActive'));
   }
 }
