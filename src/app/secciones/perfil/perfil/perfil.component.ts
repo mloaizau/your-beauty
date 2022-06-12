@@ -36,7 +36,6 @@ export class PerfilComponent implements OnInit {
     if (!this.session) {
       this.obtenerSesion();
     }
-    console.log(this.session)
   }
 
   goTo(ruta){

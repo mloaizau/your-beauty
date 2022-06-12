@@ -20,7 +20,6 @@ export class FirestoreService {
   }
 
   public actualizar(id,coleccion) {
-    console.log("actualizando ", id, " ", coleccion);
     this.angularFirestore.collection("YBUser").doc(id).set(coleccion);
     return;
   }

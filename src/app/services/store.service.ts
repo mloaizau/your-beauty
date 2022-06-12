@@ -14,7 +14,6 @@ export class StoreService {
     return new Promise((resolve, reject) => {
       const url = 'https://cosmetic-store-dev.herokuapp.com/productos';
       this.httpClient.get(url).subscribe(data => {
-        console.log(data);
         resolve(data)
       });
     });
@@ -24,7 +23,6 @@ export class StoreService {
     return new Promise((resolve, reject) => {
       const url = 'https://cosmetic-store-dev.herokuapp.com/productos?marca='+marca;
       this.httpClient.get(url).subscribe(data => {
-        console.log(data);
         resolve(data)
       });
     });
@@ -34,7 +32,6 @@ export class StoreService {
     return new Promise((resolve, reject) => {
       const url = 'https://cosmetic-store-dev.herokuapp.com/categorias';
       this.httpClient.get(url).subscribe(data => {
-        console.log(data);
         resolve(data)
       });
     });
@@ -44,7 +41,6 @@ export class StoreService {
     return new Promise((resolve, reject) => {
       const url = 'https://cosmetic-store-dev.herokuapp.com/productos?categoria='+category;
       this.httpClient.get(url).subscribe(data => {
-        console.log(data);
         resolve(data)
       });
     });
@@ -54,7 +50,6 @@ export class StoreService {
     return new Promise((resolve, reject) => {
       const url = 'https://cosmetic-store-dev.herokuapp.com/productos?id='+id;
       this.httpClient.get(url).subscribe(data => {
-        console.log(data);
         resolve(data)
       });
     });

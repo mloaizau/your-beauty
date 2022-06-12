@@ -28,7 +28,6 @@ export class ResumenPage implements OnInit {
     private cart: CarritoProvider
   ) {
     this.count = this.cart.getCart().length;
-    console.log(this.count);
   }
 
   ngOnInit() {
@@ -58,5 +57,9 @@ export class ResumenPage implements OnInit {
   addToCar(item){
     this.cart.addItem(item);
     this.count = this.cart.getCantidad();
+  }
+
+  goDetails(id){
+    this.router.navigate(["/home/tabs/detalle"], { queryParams: {id: id} });
   }
 }

@@ -22,13 +22,13 @@
   </ion-item>
   <ion-slides class="slide-container" [options]="slideOptsOne" pager="true" pager #IonSlides>
     <ion-slide>
-      <img src="https://cdn.shopify.com/s/files/1/0353/2659/1109/files/Escritorio_39_1800x.png?v=1654701910" alt="">
+      <img src="assets/slide1.png" alt="">
     </ion-slide>
     <ion-slide>
-      <img src="https://cdn.shopify.com/s/files/1/0353/2659/1109/files/Escritorio_40_1800x.png?v=1654704339" alt="">
+      <img src="assets/slide2.png" alt="">
     </ion-slide>
     <ion-slide>
-      <img src="https://cdn.shopify.com/s/files/1/0353/2659/1109/files/Escritorio_41_1800x.png?v=1654709641" alt="">
+      <img src="assets/slide3.png" alt="">
     </ion-slide>
   </ion-slides>
   <h3 class="texto-centrado">Marcas destacadas</h3>
@@ -57,11 +57,11 @@
       <img src="https://blog.beautystat.com/wp-content/uploads/2014/09/Christopher-Kane-for-NARS-logo.jpg" alt="">
     </ion-item>
   </ion-row>
-  <h3 class="texto-centrado">Producto más vendido</h3>
+  <h3 style="margin-top: 50px;" class="texto-centrado">Producto más vendido</h3>
   <ion-row *ngIf="producto">
     <ion-card class="centrado">
-      <img class="image-size" [src]="producto[0].imagen" onError="this.src='https://concepto.de/wp-content/uploads/2015/05/Default-1-e1547044737976.jpg'" />
-      <ion-card-header>
+      <img (click)="goDetails(producto[0].id)" class="image-size" [src]="producto[0].imagen" onError="this.src='https://concepto.de/wp-content/uploads/2015/05/Default-1-e1547044737976.jpg'" />
+      <ion-card-header (click)="goDetails(producto[0].id)">
         <ion-card-subtitle>{{producto[0].marca}}</ion-card-subtitle>
         <ion-card-title>{{producto[0].nombre}}</ion-card-title>
       </ion-card-header>

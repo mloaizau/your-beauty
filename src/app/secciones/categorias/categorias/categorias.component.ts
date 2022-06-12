@@ -26,7 +26,6 @@ export class CategoriasComponent implements OnInit {
   }
 
   irCategoria(nombre){
-    console.log(nombre);
     this.router.navigate(['/home/tabs/ofertas'], { queryParams: {categoria: nombre} });
   }
 }

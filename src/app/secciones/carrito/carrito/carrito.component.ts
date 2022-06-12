@@ -66,7 +66,6 @@ export class CarritoComponent implements OnInit {
             data: datosUsers.payload.doc.data()
           });
         });
-        console.log(arrayColeccionID);
         let idColecction = arrayColeccionID.find(x => x.data.correo == this.session.correo);
         this.datos(idColecction.id)
         ff.unsubscribe();
@@ -88,7 +87,7 @@ export class CarritoComponent implements OnInit {
     let transaction = Math.floor((Math.random() * 1000000000) + 1);
     let compra = {} as Usuario;
     let historial = this.session.historial ? this.session.historial : [];
-    console.log(historial);
+
     compra.nombres = this.session.nombres;
     compra.apellidos = this.session.apellidos;
     compra.direccion = this.session.direccion;

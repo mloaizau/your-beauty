@@ -27,7 +27,6 @@ export class DetalleComponent implements OnInit {
     });
     this.producto = await this._storeService.getID(this.params.id);
     this.count = this.cart.getCantidad();
-    console.log(this.producto);
   }
 
   addToCar(producto){
