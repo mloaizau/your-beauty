@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-Aplicación móvil de venta de cosméticos.
+Your Beauty es la aplicación definitiva para los amantes de los cosméticos. Descubre una amplia gama de productos de belleza, desde maquillaje hasta cuidados de la piel, todo al alcance de tu mano. Navega por neustras categorías, encuentra tus marcas favoritas, y explora las últimas tendencias en cosméticos.
 </p>
 
 <h1 align="center">Screenshots</h1>
