@@ -6,7 +6,7 @@
 Aplicación móvil de venta de cosméticos.
 </p>
 
-## Screenshots
+<h1 align="center">Screenshots</h1>
 <div>
   <img width="140px" src="https://drive.google.com/uc?export=view&id=1ZWifa5L6tge8EZC1IU4Q2WLWGvJtQQ8x" />
   <img width="140px" src="https://drive.google.com/uc?export=view&id=1LQ0zPUH2YiTij-4qoKRCvjw37nY_UZmw" />
@@ -16,7 +16,7 @@ Aplicación móvil de venta de cosméticos.
   <img width="140px" src="https://drive.google.com/uc?export=view&id=1i-xfBSmxIpQ45iLCGUVKPljuhZbEKg_z" />
 </div>
 
-## Disclaimer
+<h1 align="center">Disclaimer</h1>
 <div align="center">
   Proyecto personal realizado para obtener el título de Diplomado en Desarrollo de Aplicaciones Móviles.
   <br/>
@@ -26,6 +26,7 @@ Aplicación móvil de venta de cosméticos.
   </a>
 </div>
 
-## Créditos
-
+<h1 align="center">Credits</h1>
+<p align="center">
 Diseñado con ♥️ por [mloaizau](https://github.com/mloaizau)
+</p>
