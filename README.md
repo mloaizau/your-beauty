@@ -28,5 +28,5 @@ Aplicación móvil de venta de cosméticos.
 
 <h1 align="center">Credits</h1>
 <p align="center">
-Diseñado con ♥️ por [mloaizau](https://github.com/mloaizau)
+Diseñado con ♥️ por <a href="https://github.com/mloaizau" target="_blank">@mloaizau</a>
 </p>
