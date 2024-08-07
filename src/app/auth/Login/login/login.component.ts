@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from "../../../interface/usuario";
 import { FirestoreService } from 'src/app/services/firestore.service';
-import { FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SessionService } from "../../../services/session.service";
 
@@ -16,9 +16,9 @@ export class LoginComponent implements OnInit {
     data: {} as Usuario
    }];
 
-   usuario = new FormGroup({
-    correo: new FormControl(''),
-    password: new FormControl(''),
+   usuario = new UntypedFormGroup({
+    correo: new UntypedFormControl(''),
+    password: new UntypedFormControl(''),
   });
 
   isError: boolean;

@@ -14,21 +14,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { CallNumber } from '@awesome-cordova-plugins/call-number/ngx';
 
 @NgModule({
-  declarations: [AppComponent],
-  entryComponents: [],
-  imports: [
-    BrowserModule,
-    IonicModule.forRoot(),
-    AppRoutingModule,
-    AngularFirestoreModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFirestoreModule,
-    ReactiveFormsModule,
-    IonicStorageModule.forRoot(),
-    HttpClientModule
-  ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, CallNumber],
-  bootstrap: [AppComponent],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+    declarations: [AppComponent],
+    imports: [
+        BrowserModule,
+        IonicModule.forRoot(),
+        AppRoutingModule,
+        AngularFirestoreModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        AngularFirestoreModule,
+        ReactiveFormsModule,
+        IonicStorageModule.forRoot(),
+        HttpClientModule
+    ],
+    providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, CallNumber],
+    bootstrap: [AppComponent],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule {}
