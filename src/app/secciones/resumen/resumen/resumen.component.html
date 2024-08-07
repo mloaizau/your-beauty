@@ -20,17 +20,21 @@
   <ion-item lines="none" *ngIf="session">
     <ion-label style="color: grey;">entrega en {{session.direccion}}</ion-label>
   </ion-item>
-  <ion-slides class="slide-container" [options]="slideOptsOne" pager="true" pager #IonSlides>
-    <ion-slide>
+  <swiper-container class="slide-container" #swiper
+      [modules]="swiperModules" [slidesPerView]="1" [loop]="true"
+      [autoplay]="{ delay: 3000, disableOnInteraction: false }" [pagination]="true"
+      autoplay="true"
+    >
+    <swiper-slide>
       <img src="assets/slide1.png" alt="">
-    </ion-slide>
-    <ion-slide>
+    </swiper-slide>
+    <swiper-slide>
       <img src="assets/slide2.png" alt="">
-    </ion-slide>
-    <ion-slide>
+    </swiper-slide>
+    <swiper-slide>
       <img src="assets/slide3.png" alt="">
-    </ion-slide>
-  </ion-slides>
+    </swiper-slide>
+  </swiper-container>
   <h3 class="texto-centrado">Marcas destacadas</h3>
   <ion-row>
     <ion-item (click)="filtroMarca('MAYBELLINE')" class="marcas-destacadas" lines="none">

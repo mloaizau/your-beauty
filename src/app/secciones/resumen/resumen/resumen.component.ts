@@ -1,26 +1,21 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { SessionService } from '../../../services/session.service';
-import { IonSlides } from '@ionic/angular';
+import { IonicSlides } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { CarritoProvider } from '../../../providers/carrito.provider';
 import { FilterStoreProvider } from 'src/app/providers/filter-store.provider';
 import { Utils } from 'src/app/utils/utils';
+
 @Component({
   selector: 'app-resumen',
   templateUrl: 'resumen.component.html',
   styleUrls: ['resumen.component.scss'],
 })
 export class ResumenPage implements OnInit {
-  @ViewChild(IonSlides) slides: IonSlides;
+  swiperModules = [IonicSlides];
   public session: any;
   public producto: any;
   public count: any;
-
-  slideOptsOne = {
-    initialSlide: 0,
-    slidesPerView: 1,
-    autoplay: true,
-  };
 
   constructor(
     private _session: SessionService,

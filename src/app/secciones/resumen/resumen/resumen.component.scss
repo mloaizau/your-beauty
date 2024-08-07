@@ -1,34 +1,34 @@
-.texto-centrado{
+.texto-centrado {
   text-align: center;
 }
-.imagen{
+.imagen {
   width: 70%;
   height: auto;
 }
-.icono{
+.icono {
   width: 30px;
   height: 30px;
   margin-left: 5px;
 }
-.slide-container{
+.slide-container {
   width: 90%;
-  height: 200px;
+  height: 150px;
+  margin-top: 20px;
 }
-img{
+img {
   border-radius: 10px;
 }
-.marcas-destacadas{
+.marcas-destacadas {
   width: 120px;
   height: auto;
 }
-.new-background-color{
-  --background: #FFE4F3;
+.new-background-color {
+  --background: #ffe4f3;
 }
-ion-badge{
+ion-badge {
   position: absolute;
   right: 10px;
   padding: 3px 6px;
   border-radius: 10px;
   top: 25px;
 }
-
