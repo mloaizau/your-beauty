@@ -12,10 +12,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { IonicStorageModule } from '@ionic/storage-angular';
 import { HttpClientModule } from '@angular/common/http';
 import { CallNumber } from '@awesome-cordova-plugins/call-number/ngx';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @NgModule({
     declarations: [AppComponent],
     imports: [
+        MatSlideToggleModule,
         BrowserModule,
         IonicModule.forRoot(),
         AppRoutingModule,
