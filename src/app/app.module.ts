@@ -12,6 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { IonicStorageModule } from '@ionic/storage-angular';
 import { HttpClientModule } from '@angular/common/http';
 import { CallNumber } from '@awesome-cordova-plugins/call-number/ngx';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],

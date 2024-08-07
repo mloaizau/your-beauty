@@ -1,9 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { SessionService } from '../../../services/session.service';
-import { IonSlides, NavController } from '@ionic/angular';
-import { StoreService } from 'src/app/services/store.service';
+import { IonSlides } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { CarritoProvider } from '../../../providers/carrito.provider';
+import { FilterStoreProvider } from 'src/app/providers/filter-store.provider';
+import { Utils } from 'src/app/utils/utils';
 @Component({
   selector: 'app-resumen',
   templateUrl: 'resumen.component.html',
@@ -23,11 +24,12 @@ export class ResumenPage implements OnInit {
 
   constructor(
     private _session: SessionService,
-    private _storeService: StoreService,
-    private router: Router,
-    private cart: CarritoProvider
+    private _router: Router,
+    private _cart: CarritoProvider,
+    private _filterProvider: FilterStoreProvider,
+    private _utils: Utils
   ) {
-    this.count = this.cart.getCart().length;
+    this.count = this._cart.getCart().length;
   }
 
   ngOnInit() {
@@ -42,24 +44,28 @@ export class ResumenPage implements OnInit {
     if (!this.session) {
       this.obtenerSession();
     }
-    this.producto = await this._storeService.getID('7');
-    this.count = this.cart.getCantidad();
+    const randomId = this._utils.getRandomInt();
+    this.producto = await this._filterProvider.filterId(randomId);
+    this.count = this._cart.getCantidad();
   }
+
   filtroMarca(marca) {
-    this.router.navigate(['/home/tabs/ofertas'], {
+    this._router.navigate(['/home/tabs/ofertas'], {
       queryParams: { marca: marca },
     });
   }
+
   goCategories() {
-    this.router.navigate(['/home/tabs/categoria']);
+    this._router.navigate(['/home/tabs/categoria']);
   }
 
-  addToCar(item){
-    this.cart.addItem(item);
-    this.count = this.cart.getCantidad();
+  addToCar(item) {
+    this._cart.addItem(item);
+    this.count = this._cart.getCantidad();
   }
 
-  goDetails(id){
-    this.router.navigate(["/home/tabs/detalle"], { queryParams: {id: id} });
+  goDetails(id) {
+    this._router.navigate(["/home/tabs/detalle"], { queryParams: { id } });
   }
+
 }

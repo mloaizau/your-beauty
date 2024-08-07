@@ -60,15 +60,15 @@
   <h3 style="margin-top: 50px;" class="texto-centrado">Producto más vendido</h3>
   <ion-row *ngIf="producto">
     <ion-card class="centrado">
-      <img (click)="goDetails(producto[0].id)" class="image-size" [src]="producto[0].imagen" onError="this.src='https://concepto.de/wp-content/uploads/2015/05/Default-1-e1547044737976.jpg'" />
-      <ion-card-header (click)="goDetails(producto[0].id)">
-        <ion-card-subtitle>{{producto[0].marca}}</ion-card-subtitle>
-        <ion-card-title>{{producto[0].nombre}}</ion-card-title>
+      <img (click)="goDetails(producto.id)" class="image-size" [src]="producto.imagen" onError="this.src='https://concepto.de/wp-content/uploads/2015/05/Default-1-e1547044737976.jpg'" />
+      <ion-card-header (click)="goDetails(producto.id)">
+        <ion-card-subtitle>{{producto.marca}}</ion-card-subtitle>
+        <ion-card-title>{{producto.nombre}}</ion-card-title>
       </ion-card-header>
       <ion-card-content class="justificado">
         <p>
-          <ion-label>Precio: {{producto[0].signo_precio}}{{producto[0].precio}}</ion-label>
-          <ion-button (click)="addToCar(producto[0])" expand="block" fill="outline">Agregar</ion-button>
+          <ion-label>Precio: {{producto.signo_precio}}{{producto.precio}}</ion-label>
+          <ion-button (click)="addToCar(producto)" expand="block" fill="outline">Agregar</ion-button>
         </p>
       </ion-card-content>
     </ion-card>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { StoreService } from 'src/app/services/store.service';
+import { StoreFakeGithubService } from 'src/app/services/store-fake-github.service';
 
 @Component({
   selector: 'app-categorias',
@@ -12,7 +12,7 @@ export class CategoriasComponent implements OnInit {
   public categorias: any;
 
   constructor(
-    private storeService: StoreService,
+    private storeService: StoreFakeGithubService,
     private router: Router
   ) {
   }

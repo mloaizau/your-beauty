@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CarritoProvider } from 'src/app/providers/carrito.provider';
-import { StoreService } from 'src/app/services/store.service';
+import { StoreFakeGithubService } from 'src/app/services/store-fake-github.service';
+import { FilterStoreProvider } from 'src/app/providers/filter-store.provider';
 
 @Component({
   selector: 'app-detalle',
@@ -14,23 +15,24 @@ export class DetalleComponent implements OnInit {
   public count = 0;
 
   constructor(
-    private _storeService: StoreService,
-    private route: ActivatedRoute,
-    private cart: CarritoProvider
+    private _storeService: StoreFakeGithubService,
+    private _activatedRoute: ActivatedRoute,
+    private _cart: CarritoProvider,
+    private _filterStoreProvider: FilterStoreProvider
   ) {}
 
   ngOnInit() {}
 
   async ionViewWillEnter() {
-    this.route.queryParams.subscribe((respuesta) => {
+    this._activatedRoute.queryParams.subscribe((respuesta) => {
       this.params = respuesta;
     });
-    this.producto = await this._storeService.getID(this.params.id);
-    this.count = this.cart.getCantidad();
+    this.producto = await this._filterStoreProvider.filterId(this.params.id);
+    this.count = this._cart.getCantidad();
   }
 
-  addToCar(producto){
-    this.cart.addItem(producto);
-    this.count = this.cart.getCantidad();
+  addToCar(producto) {
+    this._cart.addItem(producto);
+    this.count = this._cart.getCantidad();
   }
 }
